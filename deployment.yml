@@ -1,0 +1,15 @@
+---
+- name: Deployment of the DevOps Orchestration project using Ansible
+  hosts: localhost
+  tasks:
+    - name: Build backend api Docker image
+      command: docker build -t backend-api ./backend_api
+    - name: Build data api Docker image
+      command: docker build -t data-api ./data_api
+    - name: Install backend api to the Kubernetes cluster
+      shell: helm install backend-api ./backend_api/charts
+    - name: Install data api to the Kubernetes cluster
+      shell: helm install data-api ./data_api/charts
+    - name: Run health_check.sh script
+      script: ./health_check.sh
+  
