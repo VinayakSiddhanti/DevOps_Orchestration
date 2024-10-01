@@ -1,0 +1,12 @@
+# values.yaml
+appName: data-api
+
+image:
+  repository: data-api
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8083
+  targetPort: 5003
