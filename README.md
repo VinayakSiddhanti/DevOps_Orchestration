@@ -6,7 +6,7 @@ Objective : Update the backend and orchestrate migrating the 2 apps and script t
 Add a new backend api:
   - ```/download_external_logs``` makes a call to external service's api.
   - The external download API is dummy api, _you may leave it blank,_ however it requires $EXTERNAL_INTGERATION_KEY to authenticate
-  - the external api has multiple enviroments so the integration key varies by enviroment
+  - the external api has multiple environments so the integration key varies by environment
 #### Solution : 
 - In the ```backend_api/app.py``` file, a new api called download_external_logs is added. It makes an authentication using the $EXTERNAL_INTGERATION_KEY.
 - The authentication key can also be passed via environment variables but here we have passed it using the  $EXTERNAL_INTGERATION_KEY variable since it has only one environment. We can also import the key using  os.environ.get() object.
@@ -14,7 +14,7 @@ Add a new backend api:
 
 
 ### Task 2
-Update the health check to fit the new archeticture
+Update the health check to fit the new architecture
 
 #### Solution
 - We declare an array API_URLs and assign two values as seen in line number 6 below. These two values are the URLs to the APIs declared in the ```backend-api/app.py``` file.
